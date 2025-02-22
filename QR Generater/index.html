@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h2>QR Code Generator</h2>
+        <input type="text" id="qrText" placeholder="Enter text or URL">
+        <button class="generate-btn">Generate QR Code</button>
+        <img id="qrImage" src="" alt="QR Code" style="display: none;">
+
+        <div class="rudra">
+            <button class="bgcolor" data-color="#ff6666">Red</button>
+            <button class="bgcolor" data-color="#66cc66">Green</button>
+            <button class="bgcolor" data-color="#6699ff">Blue</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,311 @@
+body{
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right, #4682B4, #FFDAB9);
+    font-family: sans-serif;
+}
+*{
+    padding: 0;
+    margin: 0;
+}
+main{
+    width: 300px;
+    height: max-content;
+    min-height: 300px;
+    background-color: #ffffff;
+    border-radius: 30px;
+    box-shadow: 0 30px 50px #5553;
+    padding: 30px;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+main form{
+    border: 1px solid #5552;
+    display: flex;
+    border-radius: 30px;
+    justify-content: space-between;
+}
+main form input, 
+main form button{
+    border: none;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    box-sizing: border-box;
+}
+main form i{
+    opacity: 0.7;
+}
+main .result{
+    padding-top: 20px;
+    text-align: center;
+}
+main .result .name{
+    font-weight: bold;
+    font-size: large;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+main .temperature img{
+    width: 150px;
+    filter: drop-shadow(0 10px 50px #555);
+}
+main .temperature figcaption{
+    font-size: 3em;
+}
+main .description{
+    padding: 10px 0 30px;
+}
+main ul{
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+main li{
+    /* background-color: #f78a55; */
+    background: linear-gradient(to right, #4682B4, #FFDAB9);
+    color: #fff;
+    border-radius: 10px;
+    padding: 20px 10px;
+    /* background-image: linear-gradient(
+        to bottom,
+        transparent 50%,
+        #0003 50%
+    ); */
+    font-weight: bold;
+    font-size: small;
+}
+main ul li i{
+    font-size: 2em;
+    margin: 20px 0;
+    display: block!important;
+}
+/* main li:nth-child(2){
+    background-color: #b56291;
+}
+main li:nth-child(3){
+    background-color: #48567b;
+} */
+main.error{
+    animation: errorEffect 0.3s linear 1;
+}
+.container {
+    position: relative;
+    background: linear-gradient(135deg, rgb(179, 208, 253) 0%, rgb(164, 202, 248) 100%);
+    border-radius: 1000px;
+    padding: 10px;
+    display: grid;
+    z-index: 10000;
+    max-width: 230px;
+  }
+  
+  .search-container {
+    position: relative;
+    width: 90%;
+    border-radius: 50px;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-container::after, .search-container::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    position: absolute;
+  }
+  
+  .search-container::before {
+    top: -1px;
+    left: -1px;
+    background: linear-gradient(0deg, rgb(218, 232, 247) 0%, rgb(255, 255, 255) 100%);
+    z-index: -1;
+  }
+  
+  .search-container::after {
+    bottom: -1px;
+    right: -1px;
+    background: linear-gradient(0deg, rgb(163, 206, 255) 0%, rgb(211, 232, 255) 100%);
+    box-shadow: rgba(79, 156, 232, 0.7019607843) 3px 3px 5px 0px, rgba(79, 156, 232, 0.7019607843) 5px 5px 20px 0px;
+    z-index: -2;
+  }
+  
+  .input {
+    padding: 10px;
+    width: 100%;
+    background: linear-gradient(135deg, rgb(218, 232, 247) 0%, rgb(214, 229, 247) 100%);
+    border: none;
+    color: #9EBCD9;
+    font-size: 20px;
+    border-radius: 50px;
+  }
+  
+  .input:focus {
+    outline: none;
+    background: linear-gradient(135deg, rgb(239, 247, 255) 0%, rgb(214, 229, 247) 100%);
+  }
+  
+  .searchicon {
+    width: 50px;
+    aspect-ratio: 1;
+    border-left: 2px solid white;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    border-radius: 50%;
+    padding-left: 12px;
+    margin-right: 10px;
+  }
+  
+  .searchicon:hover {
+    border-left: 5px solid white;
+  } 
+  
+  .searchicon path {
+    fill: white;
+  }
+  label{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    /* background-color: #ececec; */
+    cursor: pointer;
+    z-index: 10;
+  }
+  .inputd{
+    position: absolute;
+    opacity: 0;
+  }
+  .moon{
+    position: absolute;
+    font-size: 2em;
+    color: #dfdada;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+    transform: scale(0);
+    transition: 1s ease;
+    border-radius: 50%;
+  }
+  .inputd:checked~.moon{
+    transform: scale(1) rotate(360deg);
+    transition-delay: 0.8s;
+  }
+  label img{
+    width: 100%;
+    border-radius: 50%;
+  }
+  .sun{
+    font-size: 2em;
+    color: #f2bb22;
+    filter: drop-shadow(0 0 2px rgba(0,0,0,0.5));
+    transition: 1s ease;
+    transition-delay: 0.8s;
+  }
+  .inputd:checked~.sun{
+    transform: rotate(360deg) scale(0);
+    transition-delay: 0s;
+  }
+  .toggle{
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    /* border-radius: 50%;
+    background-color: #9EBCD9; */
+    box-shadow: 
+    inset 0 8px 60px rgba(0,0,0,0.1)
+    inset 0 8px 8px rgba(0,0,0,0.1)
+    inset 0 -4px 4px rgba(0,0,0,0.1);
+    z-index: -1;
+    transition: 1s;
+  }
+  .inputd:checked~.toggle{
+    background-color: #5b5959;
+    border-radius: 50%;
+  }
+  .animatebg{
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0%;
+    left: 0;
+    background-color: #000000;
+    color: #000000; 
+    z-index: -2;
+    clip-path: circle(0% at 50% 50%);
+    transition: 1.5s ease-out;
+  }
+  .inputd:checked ~ .animatebg {
+    clip-path: circle(100%);
+    background: linear-gradient(to right, #000000, #4f4e4e);
+}
+.inputd:checked ~ body {
+    background-color: #000000;
+    color: #000000; 
+}
+
+@keyframes errorEffect{
+    0%{
+        transform: translate(10px, 5px)
+    }
+    25%{
+        transform: translate(-5px, 0)
+    }
+    50%{
+        transform: translate(8px, 2px)
+    }
+    75%{
+        transform: translate(-2px, 5px)
+    }
+    100%{
+        transform: translate(0, 0); 
+    }
+}
+@media (min-width: 800px) {
+    main{
+        width: 500px;
+    }
+    .search-container{
+        width: 170%;
+    }
+    .container{
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    max-width: 500px;
+  }
+  .searchicon{
+    opacity: 0;
+  }
+  main form{
+    border: 0;
+  }
+}
+@media (min-width: 1100px) {
+    main{
+        width: 800px;
+    }
+    .search-container{
+        width: 290%;
+    }
+    .container{
+    background: linear-gradient(135deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%);
+    max-width: 500px;
+  }
+  .searchicon{
+    opacity: 0;
+  }
+  main form{
+    border: 0;
+  }
+}
