@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="media/weather.jpeg">
+</head>
+<body>
+    <label>
+        <input type="checkbox" id="search-checkbox" class="inputd" />
+        <!-- <ion-icon name="sunny" class="sun"></ion-icon> -->
+        <img src="media/Sunday.png" alt="sun" class="sun">
+        <!-- <ion-icon name="moon" class="moon"></ion-icon> -->
+         <img src="media/Moonday.jpg" alt="moon" class="moon">
+        <span class="toggle"></span>
+        <span class="animatebg"></span>
+    </label>
+    <main>
+        <form>
+            <div class="container">
+                <div class="search-container">
+                    <input type="text" id="name"     autocomplete="off" placeholder="Enter your City...">
+                    <svg viewBox="0 0 24 24" class="searchicon">
+                        <g>
+                        <path d="M21.53 20.47l-3.66-3.66C19.195 15.24 20 13.214 20 11c0-4.97-4.03-9-9-9s-9 4.03-9 9 4.03 9 9 9c2.215 0 4.24-.804 5.808-2.13l3.66 3.66c.147.146.34.22.53.22s.385-.073.53-.22c.295-.293.295-.767.002-1.06zM3.5 11c0-4.135 3.365-7.5 7.5-7.5s7.5 3.365 7.5 7.5-3.365 7.5-7.5 7.5-7.5-3.365-7.5-7.5z"></path>
+                        </g>
+                    </svg>
+                </div>
+            </div>
+        </form>
+        <section class="result">
+
+            <figure class="name">
+                <figcaption>Delhi</figcaption> 
+                <img src="https://flagsapi.com/GB/shiny/32.png">
+            </figure>
+
+            <figure class="temperature">
+                <img src="https://openweathermap.org/img/wn/10d@4x.png">
+                <figcaption>
+                    <span>31</span>
+                    <sup>o</sup>
+                </figcaption> 
+            </figure>
+            <p class="description">overcast clouds</p>
+            <ul>
+                <li>
+                    <span>clouds</span>
+                    <i class="fa-solid fa-cloud"></i>
+                    <span id="clouds">98</span>%
+                </li>
+                <li>
+                    <span>humidity</span>
+                    <i class="fa-solid fa-droplet"></i>
+                    <span id="humidity">98</span>%
+                </li>
+                <li>
+                    <span>pressure</span>
+                    <i class="fa-solid fa-gauge"></i>
+                    <span id="pressure">1011</span>hPa
+                </li>
+            </ul>
+        </section>
+    </main>
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@latest/dist/ionicons/ionicons.js"></script>
+<script src="temperature.js"></script>
+</body>
+</html>
